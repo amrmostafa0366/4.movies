@@ -3,7 +3,7 @@
     <div *ngFor="let movie of popularMovies.results">
         <movie-card [movie]="movie"></movie-card>
     </div>
-    <mat-paginator [length]="popularMovies.total_results" [pageSize]="20" aria-label="Select page"
+    <mat-paginator [length]="popularMovies.total_results" [pageSize]="20" [hidePageSize]="true" aria-label="Select page"
         (click)="page(paginator)" #paginator>
     </mat-paginator>
 </div>
