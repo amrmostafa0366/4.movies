@@ -11,7 +11,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ReviewCardComponent } from './review-card/review-card.component';
 import { ShortenPipe } from './pipe/shorten.pipe';
 import { SearchPageComponent } from './search-page/search-page.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      { path: 'movie/:id', component:MovieComponent},
-      { path: 'search/:query', component:SearchPageComponent},
-      {path:'**',component:NotFoundComponent}
+      { path: 'movie/:id', component: MovieComponent },
+      { path: 'search/:query', component: SearchPageComponent },
+      { path: '**', component: NotFoundComponent }
     ]),
 
   ],

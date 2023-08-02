@@ -9,19 +9,10 @@ import { MovieService } from '../service/movie.service';
 })
 export class MovieCardComponent {
   @Input('movie') movie: any;
-  
 
-  constructor(private router: Router, private service:MovieService) { }
-
-  getImage(id:number){
-    this.service.getImageByMovieId(id).subscribe({
-      next:(n)=>{
-        console.log(n);
-      }
-    })
-  }
+  constructor(private router: Router) { }
 
   onClick(title: string) {
-    this.router.navigate(['/movie',title])
+    this.router.navigate(['/movie', title])
   }
 }

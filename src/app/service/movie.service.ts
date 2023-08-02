@@ -15,8 +15,8 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
 
-  getAllPopular() {
-    return this.http.get(`${this.url}/movie/popular`,
+  getAllPopular(page?:number) {
+    return this.http.get(`${this.url}/movie/popular?page=${page}`,
       { headers: this.headers }).pipe(
         catchError(this.errorHandler)
       )

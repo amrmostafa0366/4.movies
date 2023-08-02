@@ -1,7 +1,11 @@
 <div *ngIf="popularMovies && !search">
+    <!-- <div *ngFor="let movie of popularMovies.results"> -->
     <div *ngFor="let movie of popularMovies.results">
         <movie-card [movie]="movie"></movie-card>
     </div>
+    <mat-paginator [length]="popularMovies.total_results" [pageSize]="20" aria-label="Select page"
+        (click)="page(paginator)" #paginator>
+    </mat-paginator>
 </div>
 
 <div class="alert alert-danger" *ngIf="error"> {{error.status_message}}</div>

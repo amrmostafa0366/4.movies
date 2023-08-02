@@ -10,6 +10,7 @@ export class HomeComponent {
   popularMovies: any;
   @Input('search') search!: boolean;
   error: any;
+  p:number =1;
 
   constructor(private service: MovieService) { }
 
@@ -18,7 +19,7 @@ export class HomeComponent {
   }
 
   getPopular() {
-    this.service.getAllPopular().subscribe({
+    this.service.getAllPopular(this.p).subscribe({
       next: (n) => {
         this.popularMovies = n;
         console.log(this.popularMovies);
@@ -28,6 +29,11 @@ export class HomeComponent {
         this.error = e;
       }
     })
+  }
+
+  page(paginator:any){
+   this.p = paginator.pageIndex +1;
+   this.getPopular();
   }
 
 }
