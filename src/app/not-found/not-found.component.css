@@ -1,0 +1,25 @@
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 80px;
+    color: rgb(216, 187, 20);
+}
+
+h2 {
+    font-size: 36px;
+}
+
+a {
+    text-decoration: none;
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
