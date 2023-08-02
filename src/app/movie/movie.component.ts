@@ -10,8 +10,8 @@ import { MovieService } from '../service/movie.service';
 export class MovieComponent {
   id!: number;
   movie!: any;
-  error!:any;
-  reviews!:any
+  error!: any;
+  reviews!: any
   constructor(private route: ActivatedRoute, private service: MovieService) { }
 
   ngOnInit(): void {
@@ -19,36 +19,36 @@ export class MovieComponent {
   }
   getId() {
     this.route.paramMap.subscribe({
-      next:(n)=>{
+      next: (n) => {
         this.id = +n.get('id')!;
         console.log(this.id);
         this.getById();
         this.getReviews();
       },
-      error:(e)=>{
+      error: (e) => {
         this.error = e;
       }
     })
   }
-  getById(){
+  getById() {
     this.service.getById(this.id).subscribe({
-      next:(n)=>{
+      next: (n) => {
         this.movie = n;
       },
-      error:(e)=>{
+      error: (e) => {
         console.log(e);
         console.log(this.error);
       }
     })
   }
-  getReviews(){
+  getReviews() {
     this.service.getReviewsByMovieId(this.id).subscribe({
-      next:(n)=>{
+      next: (n) => {
         this.reviews = n;
         console.log(n)
       },
-      error:(e)=>{
-        this.error =e;
+      error: (e) => {
+        this.error = e;
       }
     })
   }

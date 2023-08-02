@@ -1,7 +1,19 @@
-
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a class="navbar-brand" routerLink="">AMDB</a>
     <ul class="navbar-nav">
-        <search></search>
+        <li class="nav-item">
+            <div class="search-container">
+                <form [formGroup]="form">
+                    <input class="search-input" formControlName="query" type="text" (keyup)="search()">
+                    <button class="search-button" (click)="onSearch()" [disabled]="form.invalid">Search</button>
+                </form>
+            </div>
+        </li>
     </ul>
 </nav>
+<div *ngIf="searchResult">
+    <div *ngFor="let movie of searchResult.results">
+        <movie-card [movie]="movie" (click)="clear()"></movie-card>
+    </div>
+</div>
+<div class="alert alert-danger" *ngIf="error">{{ error }}</div>

@@ -1,5 +1,5 @@
 import { MovieService } from './../service/movie.service';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,26 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  popularMovies:any;
-  error:any;
+  popularMovies: any;
+  @Input('search') search!: boolean;
+  error: any;
 
-  constructor(private service:MovieService){}
+  constructor(private service: MovieService) { }
 
   ngOnInit(): void {
     this.getPopular();
   }
 
-  getPopular(){
+  getPopular() {
     this.service.getAllPopular().subscribe({
-      next:(n)=>{
+      next: (n) => {
         this.popularMovies = n;
         console.log(this.popularMovies);
-        
+
       },
-      error:(e)=>{
+      error: (e) => {
         this.error = e;
       }
     })
   }
-  
+
 }

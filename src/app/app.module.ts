@@ -7,7 +7,6 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { RouterModule } from '@angular/router';
 import { MovieComponent } from './movie/movie.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { SearchComponent } from './search/search.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ReviewCardComponent } from './review-card/review-card.component';
 import { ShortenPipe } from './pipe/shorten.pipe';
@@ -21,7 +20,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MovieComponent,
     MovieCardComponent,
     NotFoundComponent,
-    SearchComponent,
     NavbarComponent,
     ReviewCardComponent,
     ShortenPipe,
