@@ -1,0 +1,49 @@
+.item {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.item:hover {
+    background-color: #f0f0f0;
+}
+
+.poster img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.details {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.over-view {
+    font-size: 18px;
+    margin: 0;
+}
+
+.release-date {
+    bottom: 5px;
+    right: 5px;
+    position: absolute;
+    font-size: medium;
+}
+
+.rating {
+    font-size: 15px;
+    color: #f39c12;
+    font-weight: bold;
+}

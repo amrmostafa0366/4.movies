@@ -1,0 +1,10 @@
+<div *ngIf="searchResult">
+    <div *ngFor="let movie of searchResult.results">
+        <movie-card [movie]="movie"></movie-card>
+    </div>
+    <div *ngIf="error" class="alert alert-danger">
+        {{error}}
+        <button (click)="onError()">ok</button>
+    </div>
+</div>
+<div class="alert alert-danger" *ngIf="error"> {{error.status_message}}</div>

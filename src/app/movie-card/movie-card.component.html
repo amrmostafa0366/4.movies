@@ -1,0 +1,11 @@
+<div class="item" (click)="onClick(movie.id)">
+    <div class="poster">
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path">
+    </div>
+    <div class="details">
+        <h2 class="title">{{movie.title}}</h2>
+        <i class="bi bi-star-half rating">{{movie.vote_average}}</i>
+        <p class="over-view">{{movie.overview}}</p>
+        <p class="release-date">[Release Date: {{movie.release_date}}]</p>
+    </div>
+</div>

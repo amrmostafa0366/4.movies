@@ -1,0 +1,24 @@
+<div *ngIf="movie" class="row-fluid item">
+    <div class="col-sm-4 poster">
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="img-fluid rounded">
+    </div>
+    <div class="details col-sm-3">
+        <h2 class="title">{{movie.title}}</h2>
+        <i class="bi bi-star-half rating"> {{movie.vote_average}}</i>
+        <!-- <p id="vc" class="ml-2 mb-0">({{movie.vote_count}})</p> -->
+        <p class="over-view">{{movie.overview}}</p>
+        <p class="release-date">[Release Date: {{movie.release_date}}]</p>
+    </div>
+    <div class="col">
+    </div>
+</div>
+<div *ngIf="movie">
+    <div class="title">Reviews</div>
+    <br>
+    <div *ngIf="reviews" class="row-fluid">
+        <div *ngFor="let review of reviews.results">
+            <review-card [review]="review"></review-card>
+        </div>
+    </div>
+</div>
+<div class="alert alert-danger" *ngIf="error"> {{error.status_message}}</div>

@@ -1,0 +1,11 @@
+<div *ngIf="review" class="item">
+    <div class="poster">
+        <!-- <img [src]="modifyUrl(review.author_details.avatar_path)" > -->
+    </div>
+    <div class="details">
+        <h2 class="title">{{review.author}}</h2>
+        <p class="over-view">{{review.content | shorten:400}}</p>
+        <!-- <p class="release-date">[Release Date: {{review.updated_at}}]</p> -->
+    </div>
+</div>
+  

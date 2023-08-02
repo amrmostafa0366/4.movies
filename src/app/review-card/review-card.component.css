@@ -1,0 +1,37 @@
+.item {
+    position: relative;
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.poster img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.details {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.over-view {
+    font-size: 15px;
+    margin: 0;
+}
+
+.rating {
+    font-size: 15px;
+    color: #f39c12;
+    font-weight: bold;
+}
