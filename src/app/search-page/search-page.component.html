@@ -1,4 +1,4 @@
-<div *ngIf="searchResult">
+<div *ngIf="searchResult && searchResult.results.length !== 0">
     <div *ngFor="let movie of searchResult.results">
         <movie-card [movie]="movie"></movie-card>
     </div>
@@ -6,5 +6,8 @@
         {{error}}
         <button (click)="onError()">ok</button>
     </div>
+</div>
+<div class="error-container" *ngIf="searchResult && searchResult.results.length === 0">
+    <h1>No Result Found</h1>
 </div>
 <div class="alert alert-danger" *ngIf="error"> {{error.status_message}}</div>

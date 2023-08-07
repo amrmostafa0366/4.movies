@@ -2,6 +2,7 @@ import { Component, Output } from '@angular/core';
 import { MovieService } from '../service/movie.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { SharedData } from '../service/shared.service';
 
 @Component({
   selector: 'navbar',
@@ -30,6 +31,7 @@ export class NavbarComponent {
       next: (n) => {
         this.searchResult = n;
         console.log(this.searchResult);
+        // this.shared.search = this.query?.value;
 
       },
       error: (e) => {

@@ -1,5 +1,5 @@
-<div *ngIf="popularMovies && !search">
-    <!-- <div *ngFor="let movie of popularMovies.results"> -->
+<!-- <div *ngIf="popularMovies && searchValue ===''"> -->
+<div *ngIf="popularMovies">
     <div *ngFor="let movie of popularMovies.results">
         <movie-card [movie]="movie"></movie-card>
     </div>
